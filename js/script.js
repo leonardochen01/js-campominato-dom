@@ -7,6 +7,8 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro e
 
 const container = document.querySelector(".container")
 
+
+//CICLO CHE GENERA I 100 BOX
 for (let i = 1; i <= 100; i++){
 
   const box = document.createElement("div");
@@ -15,19 +17,38 @@ for (let i = 1; i <= 100; i++){
 
   container.append(box);
   box.append(i);
-  
-  box.addEventListener("click", function(){
+
+  function colorChange() {
     box.classList.add("color-change")
     console.log(`Hai cliccato il box n.${i}`)
-  })
+  };
+  
+  box.addEventListener("click", colorChange);
 }
 
+//BOTTONE START
 const playButton = document.querySelector("#start");
 const display = document.querySelector("#main");
 
-playButton.addEventListener("click", function(){
+function start() {
   display.classList.remove("hide");
-})
+  console.log(`Hai iniziato il gioco`)
+}
 
+playButton.addEventListener("click", start);
+
+
+
+//BOTTONE RESTART
+const restartButton = document.querySelector("#restart")
+
+function reset() {
+  const boxes = document.querySelectorAll(".box");
+  boxes.forEach(box => {
+    box.classList.remove("color-change");
+  })
+}
+
+restartButton.addEventListener("click", reset);
 
 

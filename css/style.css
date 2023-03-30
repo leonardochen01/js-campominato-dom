@@ -11,18 +11,28 @@ body{
   height: 90vh;
 }
 
+.menu{
+  width: 100%;
+  background-color: cornflowerblue;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
 #start{
   padding: 5px;
-  font-size: 2rem;
-  margin: 50px 45%;
+  font-size: 1.4rem;
+
+}
+
+#restart{
+
 }
 
 .hide{
   display: none;
-}
-
-.show{
-  display: block;
 }
 
 .container{
