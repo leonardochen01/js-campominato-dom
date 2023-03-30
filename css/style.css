@@ -57,3 +57,7 @@ body{
 .color-change{
   background-color: aqua;
 }
+
+.bomb{
+  background-color: red;
+}

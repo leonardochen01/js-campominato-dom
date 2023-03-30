@@ -32,12 +32,31 @@ const display = document.querySelector("#main");
 
 function start() {
   display.classList.remove("hide");
-  console.log(`Hai iniziato il gioco`)
-}
+  console.log(`Hai iniziato il gioco`);
+
+  //function per creare bombe
+  function generateBombs() {
+    const boxTotali = document.querySelectorAll('.box');
+    const bombNumber = [];
+    
+    while (bombNumber.length < 16) {
+      const bombRandom = Math.floor(Math.random() * boxTotali.length) + 1;
+      if (!bombNumber.includes(bombRandom)) {
+        bombNumber.push(bombRandom);
+      }
+      console.log(`La bomba si trova al box N:${bombRandom}`)
+    }
+    
+    bombNumber.forEach(i => {
+      boxTotali[i - 1].classList.add('bomb');
+    });
+
+  }
+  
+  generateBombs();
+}  
 
 playButton.addEventListener("click", start);
-
-
 
 //BOTTONE RESTART
 const restartButton = document.querySelector("#restart")
@@ -50,5 +69,3 @@ function reset() {
 }
 
 restartButton.addEventListener("click", reset);
-
-
