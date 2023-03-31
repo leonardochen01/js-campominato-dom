@@ -9,6 +9,7 @@ body{
   background-color: burlywood;
   width: 100%;
   height: 90vh;
+  position: relative;
 }
 
 .menu{
@@ -24,11 +25,6 @@ body{
 #start{
   padding: 5px;
   font-size: 1.4rem;
-
-}
-
-#restart{
-
 }
 
 .hide{
@@ -59,5 +55,18 @@ body{
 }
 
 .bomb{
-  background-color: red;
+
+}
+
+.lose{
+  display: none;
+}
+
+#lose-message{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  text-align: center;
 }
